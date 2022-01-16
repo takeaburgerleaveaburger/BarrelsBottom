@@ -11,6 +11,8 @@ else:
     name = 'varese'
 
 total = spotify.search(q='track:' + name, type='track')['tracks']['total']
+# Workaround when total returns greater than 1000 and the offset in the next query is out of bounds
+# Bug? Server side processing to trim and choose "page" of results?
 if (total > 1000):
     total = int(total / 10)
 
@@ -19,6 +21,8 @@ if (total > 0):
     track_uri = results['tracks']['items'][0]['uri']
     album_uri = results['tracks']['items'][0]['artists'][0]['uri']
 
+    # To do: use API to get and choose device_id
+    # Will be modified to use the embedded player to play track once we have a frontend
     # MacBook
     device_id = '83e760a679b4a01af5c48b6dc7a9dfb4d7c08ee4'
     # PhoneyBologna
