@@ -6,6 +6,7 @@ app = Flask(__name__)
 def index(): 
     my_string = "hell world"
     album_uri = 'spotify:album:0f4TeyGJMm9iLjD38er2lO'.split(':')[-1]
+    # Hook up to prototype_backend.py so that track_uri is fetched on the backend
     track_uri = 'spotify:track:1elJ0Y0i1ZxzpbuLgK3YTO'.split(':')[-1]
     return render_template("index.html", body=my_string, uri=track_uri)
 
