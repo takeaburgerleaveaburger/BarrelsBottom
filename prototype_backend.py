@@ -19,7 +19,8 @@ if (total > 1000):
 if (total > 0):
     results = spotify.search(q='track:' + name, type='track', limit=1, offset=total-1)
     track_uri = results['tracks']['items'][0]['uri']
-    album_uri = results['tracks']['items'][0]['artists'][0]['uri']
+    album_uri = results['tracks']['items'][0]['album']['uri']
+    artist_uri = results['tracks']['items'][0]['artists'][0]['uri']
 
     # To do: use API to get and choose device_id
     # Will be modified to use the embedded player to play track once we have a frontend
