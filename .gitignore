@@ -2,3 +2,4 @@
 thumbs.db
 *.sublime-workspace
 .cache
+/__pycache__/
