@@ -4,15 +4,15 @@
 
 <body>
    <p>{{body}}</p>
-   <p>{{uri}}</p>
 
-   <p>Search for the term of your choice and get the absolute "worst" that the artists of Spotify has to offer!</p>
+   <p>Search for the term of your choice and get the absolute "worst" that the artists of Spotify have to offer!</p>
     
    <div>
-      <textarea></textarea>
-      <button>Search</button>
+      <input type="text" id="name" name="name">
+      <input type="button" id="search" name="search" value="Search" onclick="main()">
+      <a href="{{ url_for('index') }}">Search</a>
    </div>
-
+  
    <iframe src="https://open.spotify.com/embed/track/{{uri}}"  
             width="300" height="380" frameborder="0" 
             allowtransparency="true" allow="encrypted-media"></iframe>
